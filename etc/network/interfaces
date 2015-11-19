@@ -1,0 +1,34 @@
+# The loopback network interface
+
+auto lo
+iface lo inet loopback
+
+
+# Interfaz Wifi con IP fija
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet static
+address 192.168.1.166
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers xxx.xxx.xxx.xxx  xxx.xxx.xxx.xxx
+wpa-ssid "MiRed"
+wpa-psk fbb3408d83c266a52e7154bd664d9d9cedf777fc7fa3d3f602fd5689374c24b3
+
+
+# Interfaz FastEthernet con IP fija
+
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+address 192.168.1.165
+netmask 255.255.255.0
+# gateway 192.168.1.1
+dns-nameservers xxx.xxx.xxx.xxx  xxx.xxx.xxx.xxx
+
+
+
+
+
+

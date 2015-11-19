@@ -1,0 +1,2 @@
+export BLOGOMATICPATH=/opt/blog-o-matic
+export PYTHONPATH=$PYTHONPATH:$BLOGOMATICPATH/lib:$BLOGOMATICPATH/usr/lib/python/

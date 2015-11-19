@@ -1,0 +1,14 @@
+Lifestream Plugin Install.
+
+1. Unzip the contents of the Plugins Folder.
+2. Copy the lifestream folder in your Wordpress plugins dir. (wp-content/plugins)
+3. Activate it
+4. From your Wordpress Dashboard select which feeds do you want to appear in the footer area .
+
+Important : Only the last 2 items are shown .
+
+
+
+Twitter and Flickr Configuration
+
+Enter your usernames for flickr and twitter in the Proudblack Options area.

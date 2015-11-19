@@ -1,0 +1,28 @@
+#applesearch .sbox_l {
+	background: url(../images/srch_l.png) no-repeat top left;
+	float: left;
+	width: 19px;
+	height: 19px;
+}
+
+#applesearch .sbox_r {
+	background: url(../images/srch_r.png) no-repeat top left;
+	float: left;
+	width: 19px;
+	height: 19px;
+}
+
+#applesearch .sbox input {
+	background: url(../images/srch_bg.gif) repeat-x top left;
+	float: left;
+	border: 0;
+	height: 19px;
+	width: 138px;
+	padding: 3px;
+	font: 11px/13px Arial, Helvetica, Geneva, sans-serif;
+	color: #555;
+}
+
+#searchform #srch_fld {
+	width: 138px;
+}

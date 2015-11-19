@@ -1,0 +1,14 @@
+#content{
+	display:inline;
+}
+
+#sidebar{
+	margin:20px 0 0 0;
+	display:inline;
+}
+
+#main{margin-top:20px;}
+#main-area{
+	background: url(images/mainbck.gif) repeat-y;
+	margin-top:-5px;
+}

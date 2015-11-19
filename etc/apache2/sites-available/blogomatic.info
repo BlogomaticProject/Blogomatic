@@ -1,0 +1,56 @@
+<VirtualHost *:80>	
+#	ServerAdmin webmaster@localhost
+        ServerAdmin infoblogomatic@gmail.com
+#	ServerName blogomatic.info
+#       ServerAlias www.blogomatic.info
+
+	DocumentRoot /home/sites/blogomatic.info/htdocs
+	<Directory /home/sites/blogomatic.info/htdocs>
+		Options FollowSymLinks -Indexes
+                AllowOverride AuthConfig
+                Order allow,deny
+                allow from all
+		DirectoryIndex index.py index.html
+
+		RewriteEngine on
+		RewriteBase /
+		RewriteCond %{REQUEST_URI} !^/icons
+		RewriteCond %{REQUEST_URI} !^/favicon.ico$
+		RewriteCond %{REQUEST_URI} !^(/.*)+wsgi-bin/blogomatic.py/
+		RewriteRule ^(.*)$ wsgi-bin/blogomatic.py/$1 [PT]
+	</Directory>
+
+	WSGIScriptAlias /wsgi-bin/ /home/sites/blogomatic.info/wsgi-bin/
+
+	Alias /static /home/sites/blogomatic.info/static
+	<Directory /home/sites/blogomatic.info/static>
+		Order Allow,Deny
+		Allow From All
+		Options FollowSymLinks -Indexes
+		DirectoryIndex index.html index.php
+	</Directory>	
+
+	Alias /blog /home/sites/blogomatic.info/blogs
+	<Directory /home/sites/blogomatic.info/blogs>
+		Order Allow,Deny
+		Allow From All
+		Options FollowSymLinks -Indexes
+		DirectoryIndex index.html index.php
+	</Directory>	
+
+	ScriptAlias /cgi-bin/ /home/sites/blogomatic.info/cgi-bin/
+	<Directory "/home/sites/blogomatic.info/cgi-bin/">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+     
+	ErrorLog ${APACHE_LOG_DIR}/blogomatic.info.error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/blogomatic.info.access.log combined
+</VirtualHost>
